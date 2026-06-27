@@ -15,7 +15,7 @@ export default function Dashboard() {
       <section className="glass rounded-[2rem] p-6">
         <div className="flex flex-col justify-between gap-4 lg:flex-row lg:items-end">
           <div>
-            <p className="text-sportx-secondary">Good evening, {user?.name}</p>
+            <p className="text-sportx-secondary">Welcome, {user?.name}</p>
             <h1 className="mt-2 text-4xl font-black">Your sports command center</h1>
             <p className="mt-3 max-w-2xl text-white/60">Upcoming matches, player suggestions, reputation, fitness nudges, and community activity in one place.</p>
           </div>
