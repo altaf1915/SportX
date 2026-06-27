@@ -27,14 +27,14 @@ import { sanitizeInput } from "./middleware/xss.js";
 const app = express();
 const server = http.createServer(app);
 const io = new Server(server, {
-  cors: { origin: process.env.CLIENT_URL || "http://localhost:5173", credentials: true }
+  cors: { origin: process.env.CLIENT_URL || "https://sport-x-client.vercel.app", credentials: true }
 });
 
 app.set("io", io);
 app.set("trust proxy", 1);
 
 app.use(helmet({ crossOriginResourcePolicy: { policy: "cross-origin" } }));
-app.use(cors({ origin: process.env.CLIENT_URL || "http://localhost:5173", credentials: true }));
+app.use(cors({ origin: process.env.CLIENT_URL || "https://sport-x-client.vercel.app", credentials: true }));
 app.use(rateLimit({ windowMs: Number(process.env.RATE_LIMIT_WINDOW_MS || 900000), max: Number(process.env.RATE_LIMIT_MAX || 250) }));
 app.use(express.json({ limit: "2mb" }));
 app.use(express.urlencoded({ extended: true }));
